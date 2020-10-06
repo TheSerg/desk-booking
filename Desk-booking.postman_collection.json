@@ -1,0 +1,6223 @@
+{
+	"info": {
+		"_postman_id": "bea049dd-7653-46a8-a9bb-beb7cc1d2423",
+		"name": "Desk-booking",
+		"description": "API for desk-booking applet\n\nContact Support:\n Name: Advanced\n Email: api@oneadvanced.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "offices",
+					"item": [
+						{
+							"name": "POST",
+							"item": [
+								{
+									"name": "Create office Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "9db48d16-8260-4dfd-84a3-92ca2dd9482e",
+												"exec": [
+													"pm.environment.set(\"officeId\", pm.response.json().id);\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										},
+										"description": "Create a new office"
+									},
+									"response": [
+										{
+											"name": "Created a new office",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Location",
+													"value": "https://myworkplace-url.com/v1/offices/666e6d79-5f43-41c6-b92d-586f8a8bfc78",
+													"description": "Location URI of the newly created office"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"name\": \"1st floor, Example St. 1234RB\",\n \"officeMapUrl\": \"https://google.com\"\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices"
+													]
+												}
+											},
+											"status": "Unsupported Media Type",
+											"code": 415,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "View office details",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "ea7aa116-d112-4899-8eec-317dc1759cdb",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) Office details"
+												}
+											]
+										},
+										"description": "View an office's details by id"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful office details retrieval",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"name\": \"1st floor, Example St. 1234RB\",\n \"officeMapUrl\": \"https://google.com\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Edit office",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"officeMapUrl\": \"<string>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "27aaff5f-73ac-499c-8783-965be69106a7",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) The office that needs deleting"
+												}
+											]
+										},
+										"description": "Edit the details of an office"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unsupported Media Type",
+											"code": 415,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful edit of an office",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"name\": \"1st floor, Example St. 1234RB\",\n \"officeMapUrl\": \"https://google.com\"\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete office",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "40c01491-d45a-4c6c-8a03-a12e4c10efe3",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) The office that needs deleting"
+												}
+											]
+										},
+										"description": "Delete an office by its id"
+									},
+									"response": [
+										{
+											"name": "Successful deletion of an office",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "List offices",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b060bf81-94d8-40f0-9c80-b877a549ba23",
+										"exec": [
+											"const scheme = {\r",
+											"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+											"    \"$id\": \"http://example.com/example.json\",\r",
+											"    \"type\": \"object\",\r",
+											"    \"title\": \"The root schema\",\r",
+											"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+											"    \"default\": {},\r",
+											"    \"examples\": [\r",
+											"        {\r",
+											"            \"data\": [\r",
+											"                {\r",
+											"                    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\r",
+											"                    \"name\": \"1st floor, Example St. 1234RB\",\r",
+											"                    \"officeMapUrl\": \"https://google.com\"\r",
+											"                }\r",
+											"            ],\r",
+											"            \"pagination\": {\r",
+											"                \"offset\": 100,\r",
+											"                \"limit\": 20,\r",
+											"                \"totalResultCount\": 245\r",
+											"            }\r",
+											"        }\r",
+											"    ],\r",
+											"    \"required\": [\r",
+											"        \"data\",\r",
+											"        \"pagination\"\r",
+											"    ],\r",
+											"    \"properties\": {\r",
+											"        \"data\": {\r",
+											"            \"$id\": \"#/properties/data\",\r",
+											"            \"type\": \"array\",\r",
+											"            \"title\": \"The data schema\",\r",
+											"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"            \"default\": [],\r",
+											"            \"examples\": [\r",
+											"                [\r",
+											"                    {\r",
+											"                        \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\r",
+											"                        \"name\": \"1st floor, Example St. 1234RB\",\r",
+											"                        \"officeMapUrl\": \"https://google.com\"\r",
+											"                    }\r",
+											"                ]\r",
+											"            ],\r",
+											"            \"additionalItems\": true,\r",
+											"            \"items\": {\r",
+											"                \"$id\": \"#/properties/data/items\",\r",
+											"                \"anyOf\": [\r",
+											"                    {\r",
+											"                        \"$id\": \"#/properties/data/items/anyOf/0\",\r",
+											"                        \"type\": \"object\",\r",
+											"                        \"title\": \"The first anyOf schema\",\r",
+											"                        \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                        \"default\": {},\r",
+											"                        \"examples\": [\r",
+											"                            {\r",
+											"                                \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\r",
+											"                                \"name\": \"1st floor, Example St. 1234RB\",\r",
+											"                                \"officeMapUrl\": \"https://google.com\"\r",
+											"                            }\r",
+											"                        ],\r",
+											"                        \"required\": [\r",
+											"                            \"id\",\r",
+											"                            \"name\",\r",
+											"                            \"officeMapUrl\"\r",
+											"                        ],\r",
+											"                        \"properties\": {\r",
+											"                            \"id\": {\r",
+											"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/id\",\r",
+											"                                \"type\": \"string\",\r",
+											"                                \"title\": \"The id schema\",\r",
+											"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                                \"default\": \"\",\r",
+											"                                \"examples\": [\r",
+											"                                    \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\"\r",
+											"                                ]\r",
+											"                            },\r",
+											"                            \"name\": {\r",
+											"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/name\",\r",
+											"                                \"type\": \"string\",\r",
+											"                                \"title\": \"The name schema\",\r",
+											"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                                \"default\": \"\",\r",
+											"                                \"examples\": [\r",
+											"                                    \"1st floor, Example St. 1234RB\"\r",
+											"                                ]\r",
+											"                            },\r",
+											"                            \"officeMapUrl\": {\r",
+											"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/officeMapUrl\",\r",
+											"                                \"type\": \"string\",\r",
+											"                                \"title\": \"The officeMapUrl schema\",\r",
+											"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                                \"default\": \"\",\r",
+											"                                \"examples\": [\r",
+											"                                    \"https://google.com\"\r",
+											"                                ]\r",
+											"                            }\r",
+											"                        },\r",
+											"                        \"additionalProperties\": true\r",
+											"                    }\r",
+											"                ]\r",
+											"            }\r",
+											"        },\r",
+											"        \"pagination\": {\r",
+											"            \"$id\": \"#/properties/pagination\",\r",
+											"            \"type\": \"object\",\r",
+											"            \"title\": \"The pagination schema\",\r",
+											"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"            \"default\": {},\r",
+											"            \"examples\": [\r",
+											"                {\r",
+											"                    \"offset\": 100,\r",
+											"                    \"limit\": 20,\r",
+											"                    \"totalResultCount\": 245\r",
+											"                }\r",
+											"            ],\r",
+											"            \"required\": [\r",
+											"                \"offset\",\r",
+											"                \"limit\",\r",
+											"                \"totalResultCount\"\r",
+											"            ],\r",
+											"            \"properties\": {\r",
+											"                \"offset\": {\r",
+											"                    \"$id\": \"#/properties/pagination/properties/offset\",\r",
+											"                    \"type\": \"integer\",\r",
+											"                    \"title\": \"The offset schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": 0,\r",
+											"                    \"examples\": [\r",
+											"                        100\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"limit\": {\r",
+											"                    \"$id\": \"#/properties/pagination/properties/limit\",\r",
+											"                    \"type\": \"integer\",\r",
+											"                    \"title\": \"The limit schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": 0,\r",
+											"                    \"examples\": [\r",
+											"                        20\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"totalResultCount\": {\r",
+											"                    \"$id\": \"#/properties/pagination/properties/totalResultCount\",\r",
+											"                    \"type\": \"integer\",\r",
+											"                    \"title\": \"The totalResultCount schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": 0,\r",
+											"                    \"examples\": [\r",
+											"                        245\r",
+											"                    ]\r",
+											"                }\r",
+											"            },\r",
+											"            \"additionalProperties\": true\r",
+											"        }\r",
+											"    },\r",
+											"    \"additionalProperties\": true\r",
+											"}\r",
+											"\r",
+											"pm.test(\"Schema is valid\", function() {\r",
+											"    pm.response.to.have.jsonSchema(scheme)\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "oauth2"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/offices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offices"
+									]
+								},
+								"description": "Returns a list of offices. The offices are sorted alphabetically by office name."
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "List of offices",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"data\": [\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"name\": \"1st floor, Example St. 1234RB\",\n   \"officeMapUrl\": \"https://google.com\"\n  },\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"name\": \"1st floor, Example St. 1234RB\",\n   \"officeMapUrl\": \"https://google.com\"\n  }\n ],\n \"pagination\": {\n  \"offset\": 100,\n  \"limit\": 20,\n  \"totalResultCount\": 245\n }\n}"
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create office",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9ee89bc7-45dc-4c90-b252-5ee57e0856d1",
+										"exec": [
+											"pm.environment.set(\"officeId\", pm.response.json().id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/offices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offices"
+									]
+								},
+								"description": "Create a new office"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Unsupported Media Type",
+									"code": 415,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created a new office",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeMapUrl\": \"https://google.com\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Location",
+											"value": "https://myworkplace-url.com/v1/offices/666e6d79-5f43-41c6-b92d-586f8a8bfc78",
+											"description": "Location URI of the newly created office"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"name\": \"1st floor, Example St. 1234RB\",\n \"officeMapUrl\": \"https://google.com\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "banks",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "View bank details",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "9e463171-dbb4-4624-9e9d-e153f7052d03",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) Id of the bank of desks"
+												}
+											]
+										},
+										"description": "GET a bank of desks by id"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful bank of desks details retrieval",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"name\": \"HR desk bank\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n \"manager\": \"hyt.puk@wer.pl\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Edit desk bank",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"<string>\",\n    \"officeId\": \"<uuid>\",\n    \"manager\": \"<email>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "adf10c11-a52c-49cc-b78b-1e8b46061d03",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) The bank of desks that needs updating"
+												}
+											]
+										},
+										"description": "PUT to edit a bank of desks"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unsupported Media Type",
+											"code": 415,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful edit of a desk bank",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"name\": \"HR desk bank\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n \"manager\": \"hyt.puk@wer.pl\"\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"1st floor, Example St. 1234RB\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete desk bank",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "06376c34-232e-4434-aa8c-b7d73c2c5545",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) The bank of desks that needs deleting"
+												}
+											]
+										},
+										"description": "Delete a bank of desks"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful deletion of a bank of desks",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/banks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"banks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "List desk banks",
+							"request": {
+								"auth": {
+									"type": "oauth2"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/banks?officeId=<uuid>&bankManagerEmail=<email>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"banks"
+									],
+									"query": [
+										{
+											"key": "officeId",
+											"value": "<uuid>",
+											"description": "Filters by specific office id"
+										},
+										{
+											"key": "bankManagerEmail",
+											"value": "<email>",
+											"description": "Filters by specific bank manager email"
+										}
+									]
+								},
+								"description": "Return a list of desk banks. The banks are returned sorted alphabetically by office name and bank name within each office. The list can be filtered by which office they are located or who is the manager of the desk bank."
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks?officeId=<uuid>&bankManagerEmail=<email>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankManagerEmail",
+													"value": "<email>"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "List of banks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks?officeId=<uuid>&bankManagerEmail=<email>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankManagerEmail",
+													"value": "<email>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"data\": [\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"name\": \"HR desk bank\",\n   \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n   \"manager\": \"hyt.puk@wer.pl\"\n  },\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"name\": \"HR desk bank\",\n   \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n   \"manager\": \"hyt.puk@wer.pl\"\n  }\n ],\n \"pagination\": {\n  \"offset\": 100,\n  \"limit\": 20,\n  \"totalResultCount\": 245\n }\n}"
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks?officeId=<uuid>&bankManagerEmail=<email>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankManagerEmail",
+													"value": "<email>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks?officeId=<uuid>&bankManagerEmail=<email>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankManagerEmail",
+													"value": "<email>"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create new desk bank",
+							"request": {
+								"auth": {
+									"type": "oauth2"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"officeId\": \"<uuid>\",\n    \"manager\": \"<email>\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/banks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"banks"
+									]
+								},
+								"description": "Create a new bank of desks"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"HR desk bank\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"HR desk bank\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											]
+										}
+									},
+									"status": "Unsupported Media Type",
+									"code": 415,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"HR desk bank\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"HR desk bank\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created a new bank of desks",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"name\": \"HR desk bank\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n    \"manager\": \"hyt.puk@wer.pl\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/banks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"banks"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Location",
+											"value": "https://myworkplace-url.com/v1/banks/666e6d79-5f43-41c6-b92d-586f8a8bfc78",
+											"description": "Location URI of the newly created bank of desks"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"name\": \"HR desk bank\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc80\",\n \"manager\": \"hyt.puk@wer.pl\"\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "desks",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "View desk details",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "bd92120b-3005-4dc0-9d1e-7dc9cbf4fef8",
+													"key": "id",
+													"value": "<uuid>",
+													"type": "string",
+													"description": "(Required) The desk that will be fetched"
+												}
+											]
+										},
+										"description": "View details of a desks"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Desks details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"label\": \"1\",\n \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Edit a desk",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<uuid>\",\n    \"officeId\": \"<uuid>\",\n    \"bankId\": \"<uuid>\",\n    \"label\": \"<string>\",\n    \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "4c04fa93-9849-486a-9d08-3bf371c64a4f",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) The desk that needs updating"
+												}
+											]
+										},
+										"description": "Edit the details of a desk"
+									},
+									"response": [
+										{
+											"name": "Successful edit of a desk",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"label\": \"1\",\n \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unsupported Media Type",
+											"code": 415,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete a desk",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "852af2f0-c937-4573-ac46-a9bf5cbf253f",
+													"key": "id",
+													"value": "<uuid>",
+													"type": "string",
+													"description": "(Required) The desk that will be deleted"
+												}
+											]
+										},
+										"description": "Delete a desk by its id"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful deletion of an desk",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/desks/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"desks",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "List desks",
+							"request": {
+								"auth": {
+									"type": "oauth2"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/desks?officeId=<uuid>&bankId=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"desks"
+									],
+									"query": [
+										{
+											"key": "officeId",
+											"value": "<uuid>"
+										},
+										{
+											"key": "bankId",
+											"value": "<uuid>"
+										}
+									]
+								},
+								"description": "Return a list of desks. The list is ordered alphabetically by office name and desk name within that office\nThe list can be filtered by office and by bank\n"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks?officeId=<uuid>&bankId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankId",
+													"value": "<uuid>"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks?officeId=<uuid>&bankId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankId",
+													"value": "<uuid>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "List of desks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks?officeId=<uuid>&bankId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankId",
+													"value": "<uuid>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"data\": [\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"label\": \"1\",\n   \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n  },\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"label\": \"1\",\n   \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n  }\n ],\n \"pagination\": {\n  \"offset\": 100,\n  \"limit\": 20,\n  \"totalResultCount\": 245\n }\n}"
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks?officeId=<uuid>&bankId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											],
+											"query": [
+												{
+													"key": "officeId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "bankId",
+													"value": "<uuid>"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create new desk",
+							"request": {
+								"auth": {
+									"type": "oauth2"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"officeId\": \"<uuid>\",\n    \"bankId\": \"<uuid>\",\n    \"label\": \"<string>\",\n    \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/desks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"desks"
+									]
+								},
+								"description": "Create a new desk"
+							},
+							"response": [
+								{
+									"name": "Created a new desk",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Location",
+											"value": "https://myworkplace-url.com/v1/desks/666e6d79-5f43-41c6-b92d-586f8a8bfc78",
+											"description": "Location URI of the newly created desk"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"label\": \"1\",\n \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											]
+										}
+									},
+									"status": "Unsupported Media Type",
+									"code": 415,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": {
+													"content": "Added as a part of security scheme: oauth2",
+													"type": "text/plain"
+												},
+												"key": "Authorization",
+												"value": "<token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"bankId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"label\": \"1\",\n    \"name\": \"Sales Ops, Support, Enablement & Pre-Sales 3\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/desks",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"desks"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "bookings",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "View booking details",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "ed7c5e6e-73f7-4bbf-89d6-bca3e5842529",
+													"key": "id",
+													"value": "<uuid>",
+													"type": "string",
+													"description": "(Required) The booking that will be fetched"
+												}
+											]
+										},
+										"description": "View details of a booking."
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Booking details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"managerEmail\": \"example@oneadvanced.com\",\n \"userEmail\": \"example@oneadvanced.com\",\n \"deskLabel\": \"1\",\n \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Edit booking",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<uuid>\",\n    \"officeId\": \"<uuid>\",\n    \"deskId\": \"<uuid>\",\n    \"managerEmail\": \"<email>\",\n    \"userEmail\": \"<email>\",\n    \"deskLabel\": \"<string>\",\n    \"bookingDate\": \"<string>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "75a1367c-1c45-41dd-9ecf-9c2dc6c5fa63",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) The booking that needs updating"
+												}
+											]
+										},
+										"description": "Edit a booking"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unsupported Media Type",
+											"code": 415,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful edit of a booking",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"managerEmail\": \"example@oneadvanced.com\",\n \"userEmail\": \"example@oneadvanced.com\",\n \"deskLabel\": \"1\",\n \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete booking'",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "5789c373-3d3f-421b-9aba-6a704b1875a6",
+													"key": "id",
+													"value": "<uuid>",
+													"type": "string",
+													"description": "(Required) The booking that will be deleted"
+												}
+											]
+										},
+										"description": "Delete a booking"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful deletion of a booking",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "List bookings",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings?bookerEmails=<email>&bookerEmails=<email>&teamManagerEmail=<email>&bankManagerEmail=<email>&startDate=<date>&endDate=<date>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings"
+											],
+											"query": [
+												{
+													"key": "bookerEmails",
+													"value": "<email>",
+													"description": "List of emails"
+												},
+												{
+													"key": "bookerEmails",
+													"value": "<email>",
+													"description": "List of emails"
+												},
+												{
+													"key": "teamManagerEmail",
+													"value": "<email>"
+												},
+												{
+													"key": "bankManagerEmail",
+													"value": "<email>"
+												},
+												{
+													"key": "startDate",
+													"value": "<date>"
+												},
+												{
+													"key": "endDate",
+													"value": "<date>"
+												}
+											]
+										},
+										"description": "Returns a list of bookings. The list is sorted by booking date with the latest date returned first."
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings?bookerEmails=<email>&bookerEmails=<email>&teamManagerEmail=<email>&bankManagerEmail=<email>&startDate=<date>&endDate=<date>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													],
+													"query": [
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "bankManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "startDate",
+															"value": "<date>"
+														},
+														{
+															"key": "endDate",
+															"value": "<date>"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings?bookerEmails=<email>&bookerEmails=<email>&teamManagerEmail=<email>&bankManagerEmail=<email>&startDate=<date>&endDate=<date>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													],
+													"query": [
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "bankManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "startDate",
+															"value": "<date>"
+														},
+														{
+															"key": "endDate",
+															"value": "<date>"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "List of bookings",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings?bookerEmails=<email>&bookerEmails=<email>&teamManagerEmail=<email>&bankManagerEmail=<email>&startDate=<date>&endDate=<date>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													],
+													"query": [
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "bankManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "startDate",
+															"value": "<date>"
+														},
+														{
+															"key": "endDate",
+															"value": "<date>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"data\": [\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"managerEmail\": \"example@oneadvanced.com\",\n   \"userEmail\": \"example@oneadvanced.com\",\n   \"deskLabel\": \"1\",\n   \"bookingDate\": \"Wed Sep 30 2020\"\n  },\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n   \"managerEmail\": \"example@oneadvanced.com\",\n   \"userEmail\": \"example@oneadvanced.com\",\n   \"deskLabel\": \"1\",\n   \"bookingDate\": \"Wed Sep 30 2020\"\n  }\n ],\n \"pagination\": {\n  \"offset\": 100,\n  \"limit\": 20,\n  \"totalResultCount\": 245\n }\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings?bookerEmails=<email>&bookerEmails=<email>&teamManagerEmail=<email>&bankManagerEmail=<email>&startDate=<date>&endDate=<date>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													],
+													"query": [
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "bookerEmails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "bankManagerEmail",
+															"value": "<email>"
+														},
+														{
+															"key": "startDate",
+															"value": "<date>"
+														},
+														{
+															"key": "endDate",
+															"value": "<date>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Create booking",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"officeId\": \"<uuid>\",\n    \"deskId\": \"<uuid>\",\n    \"managerEmail\": \"<email>\",\n    \"userEmail\": \"<email>\",\n    \"deskLabel\": \"<string>\",\n    \"bookingDate\": \"<string>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings"
+											]
+										},
+										"description": "Create a new booking"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													]
+												}
+											},
+											"status": "Unsupported Media Type",
+											"code": 415,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created a new booking",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n    \"managerEmail\": \"example@oneadvanced.com\",\n    \"userEmail\": \"example@oneadvanced.com\",\n    \"deskLabel\": \"1\",\n    \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/bookings",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"bookings"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Location",
+													"value": "https://myworkplace-url.com/v1/bookings/666e6d79-5f43-41c6-b92d-586f8a8bfc78",
+													"description": "Location URI of the newly created booking"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"officeId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"deskId\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc77\",\n \"managerEmail\": \"example@oneadvanced.com\",\n \"userEmail\": \"example@oneadvanced.com\",\n \"deskLabel\": \"1\",\n \"bookingDate\": \"Wed Sep 30 2020\"\n}"
+										}
+									]
+								},
+								{
+									"name": "List users",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/users?emails=<email>&emails=<email>&teamManager=<boolean>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "emails",
+													"value": "<email>",
+													"description": "List of emails to filter by, can be more than one"
+												},
+												{
+													"key": "emails",
+													"value": "<email>",
+													"description": "List of emails to filter by, can be more than one"
+												},
+												{
+													"key": "teamManager",
+													"value": "<boolean>"
+												}
+											]
+										},
+										"description": "Return a list of current users. The users are returned sorted alphabetically by name.\nThe list can be filtered using the one or more user email addresses and if they are a manager.\n"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/users?emails=<email>&emails=<email>&teamManager=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManager",
+															"value": "<boolean>"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "List of users",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/users?emails=<email>&emails=<email>&teamManager=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManager",
+															"value": "<boolean>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"data\": [\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc76\",\n   \"email\": \"example@oneadvanced.com\",\n   \"name\": \"John Smith\",\n   \"manager\": true,\n   \"admin\": true\n  },\n  {\n   \"id\": \"666e6d79-5f43-41c6-b92d-586f8a8bfc76\",\n   \"email\": \"example@oneadvanced.com\",\n   \"name\": \"John Smith\",\n   \"manager\": true,\n   \"admin\": true\n  }\n ],\n \"pagination\": {\n  \"offset\": 100,\n  \"limit\": 20,\n  \"totalResultCount\": 245\n }\n}"
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/users?emails=<email>&emails=<email>&teamManager=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManager",
+															"value": "<boolean>"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/users?emails=<email>&emails=<email>&teamManager=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "emails",
+															"value": "<email>"
+														},
+														{
+															"key": "teamManager",
+															"value": "<boolean>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "DELETE",
+							"item": [
+								{
+									"name": "Delete office Copy",
+									"request": {
+										"auth": {
+											"type": "oauth2"
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/offices/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offices",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "40c01491-d45a-4c6c-8a03-a12e4c10efe3",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) The office that needs deleting"
+												}
+											]
+										},
+										"description": "Delete an office by its id"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Successful deletion of an office",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": {
+															"content": "Added as a part of security scheme: oauth2",
+															"type": "text/plain"
+														},
+														"key": "Authorization",
+														"value": "<token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/offices/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"offices",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "https://virtserver.swaggerhub.com/AdvancedComputerSoft/desk-booking-api/1.0.1",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
